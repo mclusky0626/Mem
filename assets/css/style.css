@@ -361,7 +361,7 @@ em { font-style: italic; }
 .story__count { font: 500 11px/1 var(--f-mono); letter-spacing: .08em; color: var(--mute); }
 .story__count b { display: inline-block; margin-right: 4px; font: 600 2rem/1 var(--f-sans); letter-spacing: -.05em; color: var(--accent); font-variant-numeric: tabular-nums; }
 
-.story__track { flex: none; display: flex; align-items: stretch; width: max-content; height: min(60svh, 580px); margin-top: 5svh; padding: 0 16vw 0 var(--gutter); will-change: transform; }
+.story__track { flex: none; display: flex; align-items: stretch; width: max-content; height: min(64svh, 600px); margin-top: 5svh; padding: 0 16vw 0 var(--gutter); will-change: transform; }
 .panel { flex: none; position: relative; }
 .panel--intro { width: min(88vw, 700px); padding-right: clamp(28px, 5vw, 90px); display: flex; flex-direction: column; justify-content: center; }
 .panel--intro .h2 em { color: var(--accent); }
@@ -374,12 +374,18 @@ em { font-style: italic; }
 .panel--card { --pad: clamp(14px, 1.6vw, 24px); width: min(80vw, 430px); padding: 0 clamp(26px, 4vw, 70px) 0 var(--pad); display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; border-left: 1px solid var(--line); }
 .panel__no { position: absolute; top: 0; left: var(--pad); font: 500 11px/1 var(--f-mono); letter-spacing: .08em; color: var(--mute); }
 .panel__kanji {
-  position: absolute; top: 30px; left: var(--pad); white-space: nowrap; pointer-events: none;
+  position: absolute; z-index: 2; top: 36px; left: calc(var(--pad) + 12px); white-space: nowrap; pointer-events: none;
   font: 900 clamp(4.4rem, 9vw, 7.4rem)/1.05 var(--f-jp); letter-spacing: -.03em;
   color: transparent; -webkit-text-stroke: 1px var(--mute);
   transition: color .8s var(--ease), -webkit-text-stroke-color .8s var(--ease);
 }
 .panel.is-active .panel__kanji { color: var(--accent); -webkit-text-stroke-color: var(--accent); }
+.panel__fig { position: relative; flex: 1 1 0; min-height: 90px; margin: 26px 0 8px; overflow: hidden; background: #131316; }
+.panel__imgs { position: absolute; inset: 0; display: flex; gap: 1px; }
+.panel__imgs img { flex: 1 1 0; min-width: 0; height: 100%; object-fit: cover; object-position: var(--pos, 50% 25%); filter: grayscale(1) contrast(1.06) brightness(.7); scale: 1.08; transition: filter 1s var(--ease), scale 1.6s var(--ease); }
+.panel.is-active .panel__imgs img { filter: none; scale: 1; }
+.panel__fig figcaption { position: absolute; left: 0; bottom: 0; z-index: 1; padding: 5px 7px; background: var(--ink); color: var(--white); font: 400 9px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; transition: background-color .6s var(--ease), color .6s var(--ease); }
+.panel.is-active .panel__fig figcaption { background: var(--accent); color: var(--ink); }
 .panel__when { font: 500 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
 .panel__title { font: 600 clamp(1.6rem, 2.7vw, 2.4rem)/1 var(--f-sans); letter-spacing: -.04em; }
 .panel__text { max-width: 29em; font-size: .97rem; line-height: 1.55; color: var(--mute); transition: color .8s var(--ease); }
@@ -401,6 +407,8 @@ em { font-style: italic; }
 .story.is-static .panel--intro, .story.is-static .panel--end { width: auto; }
 .story.is-static .story__progress, .story.is-static .panel__go, .story.is-static .story__count { display: none; }
 .story.is-static .panel__text { color: var(--fg); }
+.story.is-static .panel__fig { flex: none; aspect-ratio: 4 / 3; max-width: 100%; }
+.story.is-static .panel__imgs img { filter: none; scale: 1; }
 
 /* ==========================================================================
    03 WARDROBE
