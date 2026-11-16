@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MEM쵸 캐릭터 파일 — 최애의 아이 (비공식 팬 페이지)</title>
+  <meta name="description" content="【최애의 아이】의 인기 인플루언서이자 신생 B코마치의 멤버, MEM쵸를 스크롤과 터치로 알아보는 인터랙티브 팬 페이지.">
+  <meta name="theme-color" content="#FFD12E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFD12E'/%3E%3Cpath d='M14 46C10 32 13 16 30 10c-6 10-5 22 2 34z' fill='%232B1B4E'/%3E%3Cpath d='M50 46c4-14 1-30-16-36 6 10 5 22-2 34z' fill='%232B1B4E'/%3E%3C/svg%3E">
+
+  <script>document.documentElement.classList.add("js")</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Dela+Gothic+One&family=Gaegu:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+
+  <link rel="preload" as="image" href="assets/img/memcho-full.webp">
+  <link rel="stylesheet" href="assets/css/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ───────── SVG 아이콘 스프라이트 ───────── -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-horn" viewBox="0 0 40 48"><path d="M6 46C1 30 5 10 31 2c-9 12-8 28 3 42z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 40 40"><path d="M20 0c2 12 8 18 20 20-12 2-18 8-20 20-2-12-8-18-20-20 12-2 18-8 20-20z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 32 30"><path d="M16 29C4 20 0 14 0 8.500A8.500 8.500 0 0 1 16 5a8.500 8.500 0 0 1 16 3.500C32 14 28 20 16 29z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 40 40"><path d="M20 1l5.900 12.500 13.600 1.700-10 9.400L32.100 38 20 31.400 7.900 38l2.600-13.400-10-9.400 13.600-1.700z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.500v15a1 1 0 0 0 1.500.900l12.500-7.500a1 1 0 0 0 0-1.800L8.500 3.600A1 1 0 0 0 7 4.500z"/></symbol>
+</svg>
+
+<!-- ───────── 로더 ───────── -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <div class="loader__horns">
+      <svg><use href="#i-horn"/></svg>
+      <svg><use href="#i-horn"/></svg>
+    </div>
+    <p class="loader__name">MEMcho</p>
+    <p class="loader__msg">채널 접속 중…</p>
+    <div class="loader__bar"><i></i></div>
+    <p class="loader__pct"><span>0</span>%</p>
+  </div>
+</div>
+
+<!-- ───────── 커서 팔로워 (마우스 환경 전용) ───────── -->
+<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+<!-- ───────── 상단 내비게이션 ───────── -->
+<div class="progress" aria-hidden="true"><i></i></div>
+<nav class="nav" aria-label="섹션 바로가기">
+  <a class="nav__logo" href="#top" aria-label="맨 위로">
+    <svg><use href="#i-horn"/></svg><span>MEM<b>cho</b></span><svg class="flip-x"><use href="#i-horn"/></svg>
+  </a>
+  <ul class="nav__links">
+    <li><a href="#profile">프로필</a></li>
+    <li><a href="#story">스토리</a></li>
+    <li><a href="#look">룩북</a></li>
+    <li><a href="#live">라이브</a></li>
+    <li><a href="#bkomachi">B코마치</a></li>
+    <li><a href="#gallery">갤러리</a></li>
+    <li><a href="#trivia">토막상식</a></li>
+  </ul>
+  <button class="nav__toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+</nav>
+<div class="menu" id="menu" aria-hidden="true">
+  <ul>
+    <li><a href="#profile"><small>01</small>프로필</a></li>
+    <li><a href="#story"><small>02</small>스토리</a></li>
+    <li><a href="#look"><small>03</small>룩북</a></li>
+    <li><a href="#live"><small>04</small>라이브</a></li>
+    <li><a href="#bkomachi"><small>05</small>B코마치</a></li>
+    <li><a href="#gallery"><small>06</small>갤러리</a></li>
+    <li><a href="#trivia"><small>07</small>토막상식</a></li>
+  </ul>
+</div>
+
+<main>
+
+<!-- ═════════ 01. HERO ═════════ -->
+<header class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__burst"></div>
+    <div class="hero__dots"></div>
+  </div>
+
+  <p class="hero__kicker"><span>【推しの子】</span> CHARACTER FILE</p>
+
+  <h1 class="hero__title" aria-label="MEM쵸 (MEMちょ)">
+    <span class="hero__word hero__word--a" aria-hidden="true"><i>M</i><i>E</i><i>M</i></span>
+    <span class="hero__word hero__word--b" aria-hidden="true"><i>ち</i><i>ょ</i></span>
+  </h1>
+
+  <div class="hero__chara">
+    <div class="hero__chara-move">
+      <div class="hero__chara-float">
+        <img src="assets/img/memcho-full.webp" width="600" height="1247" alt="하늘색 니트를 입고 스마트폰을 든 MEM쵸의 전신 일러스트" fetchpriority="high">
+      </div>
+    </div>
+    <button class="hero__poke" type="button" aria-label="MEM쵸 콕 찌르기" data-cursor="콕!"></button>
+    <div class="hero__bubble" aria-live="polite"><span>어서 와~ MEM쵸 채널이야!</span></div>
+  </div>
+
+  <div class="hero__stickers" aria-hidden="true">
+    <div class="sticker sticker--live" data-depth="0.9"><div class="sticker__in"><i></i>LIVE</div></div>
+    <div class="sticker sticker--badge" data-depth="1.4"><div class="sticker__in">
+      <svg viewBox="0 0 140 140">
+        <defs><path id="badge-circle" d="M70 70m-52 0a52 52 0 1 1 104 0a52 52 0 1 1-104 0"/></defs>
+        <circle cx="70" cy="70" r="68"/>
+        <text><textPath href="#badge-circle" startOffset="0">YOUTUBE 37万 ★ TIKTOK 638K ★ BUZZ PRO ★</textPath></text>
+      </svg>
+      <b>バズ<br>のプロ</b>
+    </div></div>
+    <div class="sticker sticker--spark1" data-depth="2"><div class="sticker__in"><svg><use href="#i-spark"/></svg></div></div>
+    <div class="sticker sticker--spark2" data-depth="1.2"><div class="sticker__in"><svg><use href="#i-spark"/></svg></div></div>
+    <div class="sticker sticker--spark3" data-depth="0.6"><div class="sticker__in"><svg><use href="#i-spark"/></svg></div></div>
+    <div class="sticker sticker--heart" data-depth="1.7"><div class="sticker__in"><svg><use href="#i-heart"/></svg></div></div>
+    <div class="sticker sticker--star" data-depth="1.1"><div class="sticker__in"><svg><use href="#i-star"/></svg></div></div>
+    <div class="sticker sticker--tag" data-depth="0.8"><div class="sticker__in">#新生B小町</div></div>
+  </div>
+
+  <div class="hero__foot">
+    <p class="hero__tag">버즈의 프로,<br><em>노란 뿔</em>의 작은 악마 아이돌</p>
+    <ul class="hero__roles">
+      <li>YouTuber</li><li>TikToker</li><li>Idol</li>
+    </ul>
+  </div>
+
+  <a class="hero__scroll" href="#profile" aria-label="아래로 스크롤"><span>SCROLL</span><i></i></a>
+  <div class="hero__edge" aria-hidden="true"></div>
+</header>
+
+<!-- ═════════ 마키 ═════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__row" data-dir="-1"><div class="marquee__inner">
+    <span>YOUTUBER</span><svg><use href="#i-spark"/></svg><span>TIKTOKER</span><svg><use href="#i-heart"/></svg><span>新生B小町</span><svg><use href="#i-horn"/></svg><span>バズりのプロ</span><svg><use href="#i-star"/></svg>
+  </div></div>
+  <div class="marquee__row marquee__row--alt" data-dir="1"><div class="marquee__inner">
+    <span>MEM쵸</span><svg><use href="#i-horn"/></svg><span>IMAGE COLOR : YELLOW</span><svg><use href="#i-spark"/></svg><span>155cm</span><svg><use href="#i-heart"/></svg><span>LITTLE DEVIL</span><svg><use href="#i-star"/></svg>
+  </div></div>
+</div>
+
+<!-- ═════════ 02. PROFILE ═════════ -->
+<section class="profile" id="profile" data-nav="profile">
+  <div class="wrap profile__grid">
+
+    <div class="profile__card-col">
+      <div class="idcard" data-tilt data-reveal="pop">
+        <div class="idcard__tape" aria-hidden="true"></div>
+        <div class="idcard__photo">
+          <img src="assets/img/memcho-bust.webp" width="500" height="682" alt="윙크하듯 웃으며 보라색 스마트폰을 든 MEM쵸" loading="lazy">
+          <span class="idcard__glare" aria-hidden="true"></span>
+        </div>
+        <div class="idcard__meta">
+          <p class="idcard__name">MEM쵸 <small>MEMcho</small></p>
+          <p class="idcard__id">ICHIGO PRO. · TALENT</p>
+          <svg class="idcard__horn" aria-hidden="true"><use href="#i-horn"/></svg>
+        </div>
+      </div>
+      <p class="profile__hint" data-reveal aria-hidden="true">↑ 카드에 마우스를 올려 보세요</p>
+    </div>
+
+    <div class="profile__body">
+      <p class="eyebrow" data-reveal><span>01</span> PROFILE</p>
+      <h2 class="h2" data-split>느긋한 얼굴 뒤의 전략가</h2>
+      <p class="lead" data-reveal>유튜브와 틱톡을 넘나드는 인기 인플루언서. 나른한 말투와 작은 악마 뿔 머리띠가 트레이드마크지만, 속으로는 누구보다 냉정하게 <mark>‘뜨는 법’</mark>을 계산한다. 연애 리얼리티 쇼를 계기로 아쿠아에게 스카우트되어, 한때 포기했던 아이돌의 꿈을 <mark>신생 B코마치</mark>에서 다시 시작했다.</p>
+
+      <dl class="facts">
+        <div data-reveal><dt>이름</dt><dd>MEM쵸 <small>MEMちょ · 본명 비공개</small></dd></div>
+        <div data-reveal><dt>키</dt><dd>155cm</dd></div>
+        <div data-reveal><dt>직업</dt><dd>유튜버 · 틱톡커 · 아이돌</dd></div>
+        <div data-reveal><dt>소속</dt><dd>이치고 프로덕션 <small>苺プロダクション</small></dd></div>
+        <div data-reveal><dt>그룹</dt><dd>신생 B코마치</dd></div>
+        <div data-reveal><dt>멤버 컬러</dt><dd><i class="dot" style="--c:var(--yellow)"></i>노랑</dd></div>
+        <div data-reveal><dt>성우</dt><dd>오쿠보 루미 <small>大久保瑠美</small></dd></div>
+        <div data-reveal><dt>실사판</dt><dd>ano <small>あの</small></dd></div>
+      </dl>
+
+      <div class="stats">
+        <div class="stat stat--yt" data-reveal="pop">
+          <p class="stat__num"><span data-count="37" data-suffix="만">0</span></p>
+          <p class="stat__label">유튜브 구독자</p>
+        </div>
+        <div class="stat stat--tt" data-reveal="pop">
+          <p class="stat__num"><span data-count="638" data-suffix="K">0</span></p>
+          <p class="stat__label">틱톡 팔로워</p>
+        </div>
+        <div class="stat stat--cm" data-reveal="pop">
+          <p class="stat__num"><span data-count="155" data-suffix="cm">0</span></p>
+          <p class="stat__label">키</p>
+        </div>
+      </div>
+      <p class="note" data-reveal>※ 구독자·팔로워 수는 TV 애니메이션 1기 공식 사이트의 캐릭터 소개 기준.</p>
+    </div>
+  </div>
+
+  <!-- 비밀 스크래치 카드 -->
+  <div class="wrap">
+    <div class="secret" data-reveal="pop">
+      <div class="secret__left">
+        <p class="secret__stamp">㊙ TOP SECRET</p>
+        <h3 class="secret__title">공식 프로필 나이는<br><b>18세</b>, 고등학교 3학년.</h3>
+        <p class="secret__desc">…그런데 정말일까? 오른쪽 은박을 <strong>손가락이나 마우스로 긁어서</strong> 확인해 보자.</p>
+        <p class="note">※ 1기 후반부의 가벼운 스포일러가 숨어 있어요.</p>
+      </div>
+      <div class="secret__right">
+        <div class="scratch" data-cursor="긁기">
+          <div class="scratch__under">
+            <p class="scratch__small">사실은…</p>
+            <p class="scratch__age"><span>25</span>세</p>
+            <p class="scratch__small">7살이나 속였다고는 말 못 해!</p>
+          </div>
+          <canvas class="scratch__canvas" aria-label="긁어서 비밀을 확인하는 은박"></canvas>
+        </div>
+        <button class="btn btn--ghost secret__skip" type="button">긁기 귀찮아, 바로 보기</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 03. STORY (가로 스크롤) ═════════ -->
+<section class="story" id="story" data-nav="story">
+  <div class="story__pin">
+    <div class="story__head">
+      <p class="eyebrow eyebrow--light"><span>02</span> STORY</p>
+      <p class="story__count" aria-hidden="true"><b>00</b> / 07</p>
+    </div>
+
+    <div class="story__track">
+      <article class="panel panel--intro">
+        <h2 class="h2 h2--xl">MEM쵸가<br>아이돌이<br>되기까지</h2>
+        <p class="panel__lead">돌고 돌아 7년. 한 번 닫혔던 문을 다시 여는 이야기.</p>
+        <p class="panel__go"><span>스크롤하면 옆으로 넘어가요</span><svg><use href="#i-arrow"/></svg></p>
+      </article>
+
+      <article class="panel panel--card" style="--bg:#FFE46B;--tilt:-1.500deg">
+        <span class="panel__kanji" aria-hidden="true">夢</span>
+        <p class="panel__no">01</p>
+        <p class="panel__when">어린 시절</p>
+        <h3 class="panel__title">아이돌이 되고 싶었다</h3>
+        <p class="panel__text">무대 위에서 반짝이는 아이돌을 동경하던 소녀. 전설의 그룹 B코마치와 센터 ‘아이’의 팬이었고, 언젠가 자신도 그 자리에 서겠다며 오디션의 문을 두드렸다.</p>
+      </article>
+
+      <article class="panel panel--card" style="--bg:#BFEFF2;--tilt:1.200deg">
+        <span class="panel__kanji" aria-hidden="true">休</span>
+        <p class="panel__no">02</p>
+        <p class="panel__when">고등학교 3학년</p>
+        <h3 class="panel__title">멈춰 버린 시간</h3>
+        <p class="panel__text">어머니가 쓰러지면서 모든 것이 달라졌다. 동생들의 학비를 벌기 위해 학교를 쉬고 일을 시작한다. 꿈은 잠시, 서랍 속으로.</p>
+      </article>
+
+      <article class="panel panel--card" style="--bg:#E3DAFF;--tilt:-0.800deg">
+        <span class="panel__kanji" aria-hidden="true">23</span>
+        <p class="panel__no">03</p>
+        <p class="panel__when">스물셋</p>
+        <h3 class="panel__title">닫혀 버린 문</h3>
+        <p class="panel__text">어머니가 회복했을 때는 이미 스물셋. 아이돌 오디션의 나이 제한을 훌쩍 넘긴 뒤였다. 꿈꾸던 무대로 가는 문은 조용히 닫혀 있었다.</p>
+      </article>
+
+      <article class="panel panel--card" style="--bg:#FFC2DC;--tilt:1.600deg">
+        <span class="panel__kanji" aria-hidden="true">配信</span>
+        <p class="panel__no">04</p>
+        <p class="panel__when">방송 시작</p>
+        <h3 class="panel__title">‘현역 여고생’ MEM쵸 탄생</h3>
+        <p class="panel__text">아쉬움을 달래려 시작한 인터넷 방송. 휴학 중이라 서류상으로는 아직 고등학생 — 가볍게 내건 ‘현역 JK’ 간판이 대박이 나면서, 이제는 물러설 수도 없게 됐다.</p>
+      </article>
+
+      <article class="panel panel--card" style="--bg:#C9F5DC;--tilt:-1.200deg">
+        <span class="panel__kanji" aria-hidden="true">今ガチ</span>
+        <p class="panel__no">05</p>
+        <p class="panel__when">연애 리얼리티 쇼</p>
+        <h3 class="panel__title">‘이마가치’ 출연</h3>
+        <p class="panel__text">연애 리얼리티 쇼 〈今からガチ恋始めます〉에 출연해 아쿠아, 아카네와 만난다. 한 발 물러서서 판을 읽는 분위기 메이커이자, 든든한 SNS 전략 담당.</p>
+      </article>
+
+      <article class="panel panel--card" style="--bg:#FFD9B8;--tilt:0.900deg">
+        <span class="panel__kanji" aria-hidden="true">B小町</span>
+        <p class="panel__no">06</p>
+        <p class="panel__when">스카우트</p>
+        <h3 class="panel__title">한 번 더, 아이돌</h3>
+        <p class="panel__text">방송이 끝난 뒤 아쿠아가 건넨 신생 B코마치 가입 제안. 사실은 스물다섯이라고 털어놓으며 망설였지만, 루비와 카나는 그런 건 상관없다며 손을 내밀어 주었다.</p>
+      </article>
+
+      <article class="panel panel--card panel--gold" style="--bg:#FFD12E;--tilt:-1deg">
+        <span class="panel__kanji" aria-hidden="true">JIF</span>
+        <p class="panel__no">07</p>
+        <p class="panel__when">첫 무대</p>
+        <h3 class="panel__title">노란 사이리움의 바다</h3>
+        <p class="panel__text">신생 B코마치의 첫 라이브, 재팬 아이돌 페스. 객석에 떠오른 노란 불빛은 먼 길을 돌아 꿈의 무대에 선 MEM쵸를 위한 것이었다.</p>
+      </article>
+
+      <article class="panel panel--end">
+        <svg class="panel__endhorn" aria-hidden="true"><use href="#i-horn"/></svg>
+        <p class="panel__endtext">그리고 이야기는<br>계속된다</p>
+        <svg class="panel__endhorn flip-x" aria-hidden="true"><use href="#i-horn"/></svg>
+      </article>
+    </div>
+
+    <div class="story__progress" aria-hidden="true">
+      <div class="story__line"><i></i></div>
+      <svg class="story__marker"><use href="#i-horn"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 04. LOOKBOOK ═════════ -->
+<section class="look" id="look" data-nav="look">
+  <div class="look__bg" aria-hidden="true">
+    <div class="look__blob"></div>
+    <div class="look__word"><span>CASUAL</span></div>
+  </div>
+
+  <div class="wrap look__grid">
+    <div class="look__copy">
+      <p class="eyebrow" data-reveal><span>03</span> LOOKBOOK</p>
+      <h2 class="h2" data-split>의상 체인지</h2>
+      <p class="lead" data-reveal>좌우로 밀거나 버튼을 눌러 MEM쵸의 스타일을 갈아입혀 보자.</p>
+
+      <div class="look__info" aria-live="polite">
+        <p class="look__no"><b>01</b> / 03</p>
+        <h3 class="look__name">평소의 MEM쵸</h3>
+        <p class="look__desc">하늘색 오프숄더 니트에 블랙 스커트. 민트색 슈슈와 작은 악마 귀가 달린 보라색 폰 케이스까지, 인플루언서다운 사복 스타일.</p>
+        <ul class="look__tags"><li>#사복</li><li>#오프숄더</li><li>#TV애니 1기</li></ul>
+      </div>
+
+      <div class="look__nav">
+        <button class="arrow arrow--prev" type="button" aria-label="이전 의상"><svg><use href="#i-arrow"/></svg></button>
+        <div class="look__dots" role="tablist" aria-label="의상 선택">
+          <button type="button" role="tab" aria-selected="true" aria-label="사복" class="is-active"><img src="assets/img/memcho-face.webp" alt="" width="60" height="60"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="B코마치 무대 의상"><i style="--c:#E8324F"></i></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="시즌 3 비주얼"><i style="--c:#F4F05A"></i></button>
+        </div>
+        <button class="arrow arrow--next" type="button" aria-label="다음 의상"><svg><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+
+    <div class="look__stage" data-cursor="DRAG">
+      <figure class="look__fig is-active"><img src="assets/img/memcho-full.webp" width="600" height="1247" alt="사복 차림의 MEM쵸" loading="lazy" draggable="false"></figure>
+      <figure class="look__fig"><img src="assets/img/memcho-idol.webp" width="420" height="825" alt="붉은 B코마치 무대 의상을 입은 MEM쵸" loading="lazy" draggable="false"></figure>
+      <figure class="look__fig"><img src="assets/img/memcho-s3.webp" width="365" height="884" alt="노란 프릴이 달린 검은 원피스를 입은 MEM쵸" loading="lazy" draggable="false"></figure>
+      <div class="look__ring" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 05. LIVE (버즈 시뮬레이터) ═════════ -->
+<section class="live" id="live" data-nav="live">
+  <div class="wrap live__grid">
+    <div class="live__copy">
+      <p class="eyebrow eyebrow--light" data-reveal><span>04</span> LIVE</p>
+      <h2 class="h2" data-split>버즈를 일으켜라!</h2>
+      <p class="lead" data-reveal>MEM쵸의 라이브 방송에 놀러 왔다. 화면을 <strong>연타</strong>해서 하트를 보내고, 버즈 게이지를 끝까지 채워 실시간 트렌드 1위로 만들어 보자. 손을 멈추면 열기가 식는다!</p>
+
+      <div class="gauge" data-reveal>
+        <div class="gauge__top"><span class="gauge__label">BUZZ GAUGE</span><span class="gauge__stage">잔잔한 방송</span></div>
+        <div class="gauge__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="버즈 게이지"><i></i></div>
+      </div>
+
+      <div class="live__stats" data-reveal>
+        <div><b class="live__viewers">1,204</b><span>시청자</span></div>
+        <div><b class="live__likes">0</b><span>보낸 하트</span></div>
+        <div><b class="live__rank">— 위</b><span>실시간 트렌드</span></div>
+      </div>
+      <button class="btn live__reset" type="button" hidden>다시 도전하기</button>
+    </div>
+
+    <div class="phone-wrap" data-reveal="pop">
+      <div class="phone">
+        <div class="phone__screen" data-cursor="TAP!">
+          <div class="phone__bg" aria-hidden="true"></div>
+          <img class="phone__chara" src="assets/img/memcho-bust.webp" width="500" height="682" alt="라이브 방송 중인 MEM쵸" loading="lazy" draggable="false">
+          <canvas class="phone__fx" aria-hidden="true"></canvas>
+
+          <div class="phone__top">
+            <img class="phone__avatar" src="assets/img/memcho-face.webp" width="60" height="60" alt="">
+            <div class="phone__who"><b>MEMcho <i>✓</i></b><span><em class="live__viewers">1,204</em>명 시청 중</span></div>
+            <span class="phone__livebadge"><i></i>LIVE</span>
+          </div>
+
+          <div class="phone__bubble"><span>다들 어서 와~! 하트 꾹꾹 눌러 줘!</span></div>
+          <ul class="phone__chat" aria-hidden="true"></ul>
+
+          <button class="phone__heart" type="button" aria-label="하트 보내기"><svg><use href="#i-heart"/></svg></button>
+          <div class="phone__win" aria-live="polite"><p>실시간 트렌드</p><b>1위 달성!</b></div>
+        </div>
+        <div class="phone__notch" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 06. B-KOMACHI ═════════ -->
+<section class="stage" id="bkomachi" data-nav="bkomachi">
+  <div class="stage__beams" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="stage__head">
+      <p class="eyebrow eyebrow--light" data-reveal><span>05</span> NEW B-KOMACHI</p>
+      <h2 class="h2" data-split>신생 B코마치</h2>
+      <p class="lead" data-reveal>전설의 이름을 이어받은 3인조. 멤버를 눌러서 객석의 사이리움 색을 바꿔 보자.</p>
+    </div>
+
+    <div class="members" role="radiogroup" aria-label="멤버 선택">
+      <button class="member" type="button" role="radio" aria-checked="false" data-color="#FF3D5A" data-name="루비" data-reveal>
+        <span class="member__photo"><img src="assets/img/rel-ruby.webp" width="398" height="560" alt="" loading="lazy"></span>
+        <span class="member__info"><i class="dot" style="--c:#FF3D5A"></i><b>호시노 루비</b><small>빨강 · 아이돌을 꿈꿔 온 열혈 오타쿠</small></span>
+      </button>
+      <button class="member is-active" type="button" role="radio" aria-checked="true" data-color="#FFD12E" data-name="MEM쵸" data-reveal>
+        <span class="member__photo member__photo--mem"><img src="assets/img/memcho-idol.webp" width="420" height="825" alt="" loading="lazy"></span>
+        <span class="member__info"><i class="dot" style="--c:#FFD12E"></i><b>MEM쵸</b><small>노랑 · 맏언니 겸 버즈 전략 담당</small></span>
+      </button>
+      <button class="member" type="button" role="radio" aria-checked="false" data-color="#F5F7FF" data-name="카나" data-reveal>
+        <span class="member__photo"><img src="assets/img/rel-kana.webp" width="400" height="550" alt="" loading="lazy"></span>
+        <span class="member__info"><i class="dot" style="--c:#F5F7FF"></i><b>아리마 카나</b><small>하양 · 노래를 책임지는 센터</small></span>
+      </button>
+    </div>
+
+    <p class="stage__call" aria-live="polite"><span>MEM쵸</span>의 노란 사이리움이 켜졌다!</p>
+  </div>
+  <div class="crowd" aria-hidden="true"></div>
+
+  <!-- 관계도 -->
+  <div class="wrap relations">
+    <h3 class="h3" data-reveal>MEM쵸의 사람들 <small>카드를 눌러 뒤집어 보세요</small></h3>
+    <div class="rel-grid">
+      <button class="flip" type="button" data-reveal aria-label="호시노 아쿠아와의 관계 보기">
+        <span class="flip__inner">
+          <span class="flip__face flip__front" style="--c:#3D7BFF"><img src="assets/img/rel-aqua.webp" width="398" height="560" alt="" loading="lazy"><b>호시노 아쿠아</b></span>
+          <span class="flip__face flip__back" style="--c:#3D7BFF"><em>“아쿠땅”</em><span>이마가치에서 만난 동료이자, 신생 B코마치로 이끌어 준 스카우터. 닫혔던 문을 다시 열어 준 은인.</span></span>
+        </span>
+      </button>
+      <button class="flip" type="button" data-reveal aria-label="호시노 루비와의 관계 보기">
+        <span class="flip__inner">
+          <span class="flip__face flip__front" style="--c:#FF3D5A"><img src="assets/img/rel-ruby.webp" width="398" height="560" alt="" loading="lazy"><b>호시노 루비</b></span>
+          <span class="flip__face flip__back" style="--c:#FF3D5A"><em>오타쿠 동지</em><span>둘 다 뼛속까지 아이돌 오타쿠. 덕질 이야기라면 밤을 새울 수 있는, 죽이 척척 맞는 사이.</span></span>
+        </span>
+      </button>
+      <button class="flip" type="button" data-reveal aria-label="아리마 카나와의 관계 보기">
+        <span class="flip__inner">
+          <span class="flip__face flip__front" style="--c:#D9DCEB"><img src="assets/img/rel-kana.webp" width="400" height="550" alt="" loading="lazy"><b>아리마 카나</b></span>
+          <span class="flip__face flip__back" style="--c:#D9DCEB"><em>“아리마쨩”</em><span>티격태격하면서도 실력만큼은 인정하는 센터. 카나의 복잡한 속마음을 가장 먼저 눈치채는 것도 MEM쵸.</span></span>
+        </span>
+      </button>
+      <button class="flip" type="button" data-reveal aria-label="쿠로카와 아카네와의 관계 보기">
+        <span class="flip__inner">
+          <span class="flip__face flip__front" style="--c:#7C6BFF"><img src="assets/img/rel-akane.webp" width="400" height="550" alt="" loading="lazy"><b>쿠로카와 아카네</b></span>
+          <span class="flip__face flip__back" style="--c:#7C6BFF"><em>이마가치 동기</em><span>같은 방송에서 함께 울고 웃은 출연자. 아쿠아·카나와 얽힌 삼각관계를 한 발 떨어져 지켜보며 걱정해 준다.</span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 07. GALLERY ═════════ -->
+<section class="gallery" id="gallery" data-nav="gallery">
+  <div class="wrap gallery__grid">
+    <div class="gallery__copy">
+      <p class="eyebrow" data-reveal><span>06</span> GALLERY</p>
+      <h2 class="h2" data-split>포토 덱</h2>
+      <p class="lead" data-reveal>맨 위 사진을 옆으로 <strong>휙 넘기면</strong> 다음 장이 나온다. 눌러서 크게 볼 수도 있어요.</p>
+      <div class="gallery__cap" aria-live="polite">
+        <p class="gallery__no"><b>01</b> / 06</p>
+        <p class="gallery__title">네모필라 꽃밭의 MEM쵸</p>
+      </div>
+      <div class="gallery__nav">
+        <button class="arrow arrow--prev" type="button" aria-label="이전 사진"><svg><use href="#i-arrow"/></svg></button>
+        <button class="arrow arrow--next" type="button" aria-label="다음 사진"><svg><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+
+    <div class="deck" data-cursor="DRAG">
+      <figure class="deck__card" data-title="네모필라 꽃밭의 MEM쵸"><img src="assets/img/g-nemophila.webp" width="1500" height="1025" alt="파란 네모필라 꽃밭에서 흰 원피스를 입고 웃는 MEM쵸" loading="lazy" draggable="false"></figure>
+      <figure class="deck__card" data-title="옐로 포스터 — 버킷햇 스타일"><img src="assets/img/g-poster.webp" width="1062" height="1500" alt="검은 버킷햇과 재킷 차림의 MEM쵸 포스터" loading="lazy" draggable="false"></figure>
+      <figure class="deck__card" data-title="B코마치의 밸런타인"><img src="assets/img/g-valentine.webp" width="1500" height="1055" alt="초콜릿에 둘러싸여 누워 있는 B코마치 세 사람" loading="lazy" draggable="false"></figure>
+      <figure class="deck__card" data-title="원작 컬러 일러스트"><img src="assets/img/g-manga.webp" width="1049" height="1500" alt="분홍색 배경의 원작 만화풍 MEM쵸 컬러 일러스트" loading="lazy" draggable="false"></figure>
+      <figure class="deck__card" data-title="Blu-ray 6권 디스크 라벨"><img src="assets/img/g-disc.webp" width="1500" height="1500" alt="MEM쵸가 그려진 노란색 블루레이 디스크" loading="lazy" draggable="false"></figure>
+      <figure class="deck__card" data-title="TV 애니메이션 3기 키 비주얼"><img src="assets/img/g-kv3.webp" width="1061" height="1500" alt="보랏빛 배경의 TV 애니메이션 3기 키 비주얼" loading="lazy" draggable="false"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 08. TRIVIA ═════════ -->
+<section class="trivia" id="trivia" data-nav="trivia">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal><span>07</span> TRIVIA</p>
+    <h2 class="h2" data-split>알아 두면 버즈 되는 토막상식</h2>
+    <div class="trivia__grid">
+      <button class="quiz" type="button" data-reveal><span class="quiz__inner">
+        <span class="quiz__q"><i>Q</i>본명은 뭘까?<small>눌러서 확인</small></span>
+        <span class="quiz__a"><i>A</i>작중에서 끝까지 밝혀지지 않았다. ‘MEM’이라는 이름의 유래도 여전히 수수께끼.</span>
+      </span></button>
+      <button class="quiz" type="button" data-reveal><span class="quiz__inner">
+        <span class="quiz__q"><i>Q</i>원래는 단역이었다?<small>눌러서 확인</small></span>
+        <span class="quiz__a"><i>A</i>처음엔 연애 리얼리티 쇼 편 한정 게스트로 구상됐지만, 주요 캐릭터로 승격됐다고 알려져 있다.</span>
+      </span></button>
+      <button class="quiz" type="button" data-reveal><span class="quiz__inner">
+        <span class="quiz__q"><i>Q</i>노래 실력은?<small>눌러서 확인</small></span>
+        <span class="quiz__a"><i>A</i>루비보다는 낫지만, 서툰데도 묘하게 끌리는 ‘헤타우마’ 계열. 그래서 센터는 카나의 몫.</span>
+      </span></button>
+      <button class="quiz" type="button" data-reveal><span class="quiz__inner">
+        <span class="quiz__q"><i>Q</i>머리의 뿔은 진짜?<small>눌러서 확인</small></span>
+        <span class="quiz__a"><i>A</i>작은 악마 뿔 모양의 머리띠. 거의 언제나 하고 있는 트레이드마크다.</span>
+      </span></button>
+      <button class="quiz" type="button" data-reveal><span class="quiz__inner">
+        <span class="quiz__q"><i>Q</i>공식 사이트의 VTuber?<small>눌러서 확인</small></span>
+        <span class="quiz__a"><i>A</i>애니메이션 공식 사이트에서는 VTuber로 등장해 최신 소식을 영상으로 전하기도 했다.</span>
+      </span></button>
+      <button class="quiz" type="button" data-reveal><span class="quiz__inner">
+        <span class="quiz__q"><i>Q</i>B코마치에서 맡은 일은?<small>눌러서 확인</small></span>
+        <span class="quiz__a"><i>A</i>맏언니다운 시야와 SNS 분석력으로 그룹의 프로듀스까지 거드는 든든한 조율자.</span>
+      </span></button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═════════ FOOTER ═════════ -->
+<footer class="footer">
+  <div class="footer__big" aria-hidden="true">
+    <span>구독</span><svg><use href="#i-heart"/></svg><span>좋아요</span><svg><use href="#i-spark"/></svg><span>알림 설정</span>
+  </div>
+  <p class="footer__say">여기까지 봐 줘서 고마워~! 다음 방송에서 또 만나!</p>
+  <a class="btn btn--big" href="#top" data-magnetic><svg><use href="#i-horn"/></svg>맨 위로 돌아가기</a>
+
+  <div class="footer__credits">
+    <p><strong>비공식 팬 페이지</strong>입니다. 원작·애니메이션 제작사와 관계가 없으며, 사용된 일러스트와 캐릭터의 권리는 모두 원저작권자에게 있습니다.</p>
+    <p>©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会</p>
+    <p class="footer__links">
+      참고 · <a href="https://ichigoproduction.com/" target="_blank" rel="noopener">TV 애니메이션 공식 사이트</a>
+      <a href="https://ja.wikipedia.org/wiki/%E3%80%90%E6%8E%A8%E3%81%97%E3%81%AE%E5%AD%90%E3%80%91" target="_blank" rel="noopener">위키백과</a>
+      제작 · GSAP · ScrollTrigger · Draggable · Lenis
+    </p>
+  </div>
+</footer>
+
+<!-- ═════════ 라이트박스 ═════════ -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="사진 크게 보기" hidden>
+  <button class="lightbox__close" type="button" aria-label="닫기">✕</button>
+  <img alt="">
+  <p class="lightbox__cap"></p>
+</div>
+
+<script src="assets/js/vendor/gsap.min.js"></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/js/vendor/Draggable.min.js"></script>
+<script src="assets/js/vendor/InertiaPlugin.min.js"></script>
+<script src="assets/js/vendor/lenis.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
