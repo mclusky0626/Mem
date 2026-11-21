@@ -128,3 +128,7 @@ python3 direct-link/notify.py --target channel:YOUR_CHANNEL_ID --node mac-local 
 이후 양쪽은 이 저장소를 받아 같은 기준 코드로 작업합니다. 각 변경은 `agent/english-description` 형태의 새 브랜치에서 만들고, 작성 agent·변경 범위·테스트 환경·남은 한계를 PR에 기록합니다. 다른 agent는 PR diff를 확인한 뒤 자기 기기에서 필요한 테스트를 수행합니다. 키나 운영 DB를 코드 교환에 섞지 않습니다. 지금 공개한 것은 이 과정을 지원하는 코드이지, 자동 git pull·충돌 해결·PR merge 기능이 아닙니다.
 
 기록 근거는 공개에서 제외한 당시 로컬 `direct-link/README.md`, `WINDOWS.md`, `AUTOMATION.md`, `evidence-direct-01.json`, `evidence-direct-02-windows.json`, `evidence-auto-acceptance.json`입니다. 원문 전체 대화가 필요하면 별도의 기록 확보가 필요하며, 이 문서는 누락된 대화를 추정해서 채우지 않았습니다.
+
+## 보존 대화 전사본 추가
+
+후속 검색에서 당시 보존 세션을 찾았습니다. [원문 발췌 전사본](TRANSCRIPT-2026-11-18.md)에 2026-11-18 10:21–12:03 KST의 메시지를 수록했습니다. 위 본문 작성 때는 문서·증거 파일을 근거로 했고, 이번 전사본은 별도로 확보한 세션 텍스트입니다. 전체 Discord 대화 확보나 현재 Windows 재검증을 뜻하지 않습니다.

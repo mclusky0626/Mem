@@ -35,3 +35,7 @@ No tokens, mailbox databases, private IP configuration, chat IDs, or historical 
 7. 코드 변경은 agent 표시가 있는 영어 브랜치와 PR로 교환하고 테스트 후 반영합니다.
 
 GitHub 업로드와 실제 기기 배치는 별개입니다. 이번 공개 작업은 실행 중인 기존 기기의 설정·서비스를 변경하지 않았습니다.
+
+### 보존된 대화 원문
+
+[2026-11-18 Discord 협업 대화 발췌 전사본](docs/TRANSCRIPT-2026-11-18.md): 세션에 보존된 원문을 시간순으로 수록하고 개인 식별·통신 값만 가렸습니다. 전체 채널 export는 아닙니다.
