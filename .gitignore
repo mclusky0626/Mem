@@ -1,0 +1,12 @@
+# Agent-created release exclusions
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+token
+*.sqlite3
+*.sqlite3-*
+*.log
+*.pid
+*.lock
